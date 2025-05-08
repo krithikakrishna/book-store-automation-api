@@ -15,12 +15,12 @@ import java.util.HashMap;
 import java.util.List;
 
 
-public class UserStepDefs {
+public class StepDefinitions {
     HashMap<String,Object> bookDetails=new HashMap<>();
     List<HashMap<String,Object>> allBooksList=new ArrayList<>();
     private final BookStoreData bookStoreData;
 
-    public UserStepDefs()
+    public StepDefinitions()
     {
         this.bookStoreData=new BookStoreData();
     }
@@ -98,7 +98,7 @@ public class UserStepDefs {
                 break;
 
             case "missingParam":
-                Assert.assertEquals(bookStoreData.getLogInResponse().getStatusLine(),"HTTP/1.1 422 Unprocessable Entity","Response line is not as expected");
+                Assert.assertEquals(bookStoreData.getLogInResponse().getStatusLine(),"HTTP/1.1 422 Unprocessable Content","Response line is not as expected");
                 Assert.assertEquals(bookStoreData.getLogInResponse().jsonPath().get("detail.get(0).type"),"missing","Missing param error type is not shown");
                 Assert.assertEquals(bookStoreData.getLogInResponse().jsonPath().get("detail.get(0).msg"),"Field required","Field required error should be shown");
                 break;
