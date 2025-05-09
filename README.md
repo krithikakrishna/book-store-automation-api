@@ -10,7 +10,7 @@
 | 🔄 **Framework**        | Rest Assured+ Cucumber BDD – For readable, behavior-driven API automation 
 | 🛠 **Build Tool**       | Maven – For dependency management & CI/CD integrations 
 | ✅ **Test Execution**   | TestNG Chosen for test execution, parallel runs, retries & CI/CD integration
-| 📊 **Reporting**        | Allure ReportFor visual insights into test runs, categorization, and history
+| 📊 **Reporting**        | Allure Report, Cucumber report, JSON report,HTML reports For visual insights into test runs, categorization, and history
 
 --------------------
 ## 🧪 Why This Stack?
