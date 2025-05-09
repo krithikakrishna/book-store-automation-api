@@ -5,7 +5,7 @@
 
 | Component               | Description                                                                 
 |-------------------------|-----------------------------------------------------------------------------
-| 🧠 **IDE**              | IntelliJ IDEA                                                               
+| 🧠 **IDE**              | VS code                                                           
 | ☕ **Language**          | Java 11+                                                                    
 | 🔄 **Framework**        | Rest Assured+ Cucumber BDD – For readable, behavior-driven API automation 
 | 🛠 **Build Tool**       | Maven – For dependency management & CI/CD integrations 
