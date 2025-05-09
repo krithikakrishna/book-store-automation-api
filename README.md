@@ -20,13 +20,14 @@
 - Robust test orchestration: **retry mechanisms**, **parallel execution**, **custom listeners**.
 - Seamless CI/CD compatibility.
 
-### 📈 Allure Report Advantages
+### 📈 Allure Report, Cucumber report,HTMl/Json Report Advantages
 - Rich UI with detailed **test case visualization**.
 - Categorizes failures:
   - **Test Failures** → Assertion errors, unstable test scripts.
   - **Product Failures** → Server errors (5xx), broken environments.
 - Maintains history & trends of failure across builds.
 - Integrated easily with **CI pipelines** (e.g., Jenkins, GitHub Actions).
+-Can able to visualize in File Explorer itself before jenkin 
 
 ------------------------------
 **How to Set Up & Run the Project**
