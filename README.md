@@ -5,12 +5,12 @@
 
 | Component               | Description                                                                 
 |-------------------------|-----------------------------------------------------------------------------
-| 🧠 **IDE**              | IntelliJ IDEA                                                               
+| 🧠 **IDE**              | VS code                                                           
 | ☕ **Language**          | Java 11+                                                                    
 | 🔄 **Framework**        | Rest Assured+ Cucumber BDD – For readable, behavior-driven API automation 
 | 🛠 **Build Tool**       | Maven – For dependency management & CI/CD integrations 
 | ✅ **Test Execution**   | TestNG Chosen for test execution, parallel runs, retries & CI/CD integration
-| 📊 **Reporting**        | Allure ReportFor visual insights into test runs, categorization, and history
+| 📊 **Reporting**        | Allure Report, Cucumber report, JSON report,HTML reports For visual insights into test runs, categorization, and history
 
 --------------------
 ## 🧪 Why This Stack?
@@ -20,13 +20,14 @@
 - Robust test orchestration: **retry mechanisms**, **parallel execution**, **custom listeners**.
 - Seamless CI/CD compatibility.
 
-### 📈 Allure Report Advantages
+### 📈 Allure Report, Cucumber report,HTMl/Json Report Advantages
 - Rich UI with detailed **test case visualization**.
 - Categorizes failures:
   - **Test Failures** → Assertion errors, unstable test scripts.
   - **Product Failures** → Server errors (5xx), broken environments.
 - Maintains history & trends of failure across builds.
 - Integrated easily with **CI pipelines** (e.g., Jenkins, GitHub Actions).
+-Can able to visualize in File Explorer itself before jenkin 
 
 ------------------------------
 **How to Set Up & Run the Project**
