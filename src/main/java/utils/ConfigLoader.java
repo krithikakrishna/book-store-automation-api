@@ -11,7 +11,7 @@ public class ConfigLoader {
 
     public static void setUp()
     {
-        String configFilePath="src/test/resources/application-UATB.properties";
+        String configFilePath="src/test/resources/application-PROD.properties";
         try (InputStream input = ConfigLoader.class.getClassLoader().getResourceAsStream(configFilePath)) {
             if (input == null) {
                 throw new RuntimeException("Properties file not found: " + configFilePath);

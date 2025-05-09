@@ -33,15 +33,35 @@ public class StepDefinitions {
 
     @When("^do the sign up with (.*) credentials$")
     public void doTheSignUpWithValidCredentials(String condition) {
-        if(condition.equalsIgnoreCase("valid"))
-        {
-            bookStoreData.setValidEmailUsed(UserApi.generateEmailAndPassword(10)+"@gmail.com");
-            bookStoreData.setValidPasswordUsed(UserApi.generateEmailAndPassword(8));
-        } else if (condition.equalsIgnoreCase("newPasswordOnly")) {
-            bookStoreData.setValidPasswordUsed(UserApi.generateEmailAndPassword(8));
-        }
+        // if(condition.equalsIgnoreCase("valid"))
+        // {
+        //     bookStoreData.setValidEmailUsed(UserApi.generateFakeEmail());
+        //     bookStoreData.setValidPasswordUsed(UserApi.generateFakePassword());
+        // } else if (condition.equalsIgnoreCase("newPasswordOnly")) {
+        //     bookStoreData.setValidEmailUsed(UserApi.generateFakeEmail()); // Required fix
+        //     bookStoreData.setValidPasswordUsed(UserApi.generateFakePassword());
+        // }
 
-        Response response=UserApi.signUp(bookStoreData.getValidEmailUsed(),bookStoreData.getValidPasswordUsed(), bookStoreData);
+        // Response response=UserApi.signUp(bookStoreData.getValidEmailUsed(),bookStoreData.getValidPasswordUsed(), bookStoreData);
+        // bookStoreData.setSignUpResponse(response);
+        if (condition.equalsIgnoreCase("valid")) {
+            // Generate and store a new email and password
+            bookStoreData.setValidEmailUsed(UserApi.generateFakeEmail());
+            bookStoreData.setValidPasswordUsed(UserApi.generateFakePassword());
+        } else if (condition.equalsIgnoreCase("newPasswordOnly")) {
+            // Use the same email but a new password to simulate "already registered"
+            if (bookStoreData.getValidEmailUsed() == null) {
+                throw new RuntimeException("Email must be set using 'valid' condition before using 'newPasswordOnly'");
+            }
+            bookStoreData.setValidPasswordUsed(UserApi.generateFakeEmail());
+            bookStoreData.setValidPasswordUsed(UserApi.generateFakePassword());
+        }
+    
+        Response response = UserApi.signUp(
+            bookStoreData.getValidEmailUsed(),
+            bookStoreData.getValidPasswordUsed(),
+            bookStoreData
+        );
         bookStoreData.setSignUpResponse(response);
     }
 
@@ -67,8 +87,9 @@ public class StepDefinitions {
     public void userTriedToLoginWithValidCredentialsIntoBookStoreSystem(String condition) {
         if(condition.equalsIgnoreCase("noSignUpUser"))
         {
-            bookStoreData.setValidEmailUsed(UserApi.generateEmailAndPassword(10)+"@gmail.com");
-            bookStoreData.setValidPasswordUsed(UserApi.generateEmailAndPassword(8));
+            bookStoreData.setValidEmailUsed(UserApi.generateFakeEmail());
+
+            bookStoreData.setValidPasswordUsed(UserApi.generateFakePassword());
         }
         else if(condition.equalsIgnoreCase("missingParam"))
         {
