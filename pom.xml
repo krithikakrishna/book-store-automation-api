@@ -64,27 +64,47 @@
         </repository>
     </repositories>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-                <configuration>
-                    <includes>
-                        <include>**/CucumberRunner.java</include>
-                    </includes>
-                    <systemPropertyVariables>
-                        <allure.results.directory>target/allure-results</allure.results.directory>
-                    </systemPropertyVariables>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-maven</artifactId>
-                <version>2.11.2</version>
-            </plugin>
-        </plugins>
-    </build>
+   <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.1.2</version>
+            <configuration>
+                <includes>
+                    <include>**/CucumberRunner.java</include>
+                </includes>
+                <systemPropertyVariables>
+                    <allure.results.directory>target/allure-results</allure.results.directory>
+                </systemPropertyVariables>
+            </configuration>
+        </plugin>
+
+        <plugin>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-maven</artifactId>
+            <version>2.11.2</version>
+        </plugin>
+
+        <!-- Lombok Annotation Processor Plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.10.1</version>
+            <configuration>
+                <source>17</source> <!-- or 11, or your project's Java version -->
+                <target>17</target>
+                <annotationProcessorPaths>
+                    <path>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok</artifactId>
+                        <version>1.18.30</version>
+                    </path>
+                </annotationProcessorPaths>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
 
 </project>
